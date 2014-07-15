@@ -22,5 +22,16 @@ public class HelloWorldServlet extends HttpServlet {
         pw.flush();
         pw.close();
     }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String add1=req.getParameter("add1");
+        String add2=req.getParameter("add2");
+
+        PrintWriter pw  = resp.getWriter();//得到一个输出流
+        pw.println("<html><head></head><body>"+ new HelloWorld().sayHello() +"~</body></html>");
+        pw.flush();
+        pw.close();
+    }
 
 }
