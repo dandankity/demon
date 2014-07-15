@@ -1,0 +1,34 @@
+23:38:17.397 [main] INFO  hello.HelloWorld - Hello World
+23:39:08.502 [main] INFO  hello.HelloWorld - Hello World
+23:40:42.649 [main] INFO  hello.HelloWorld - Hello World
+00:06:15.496 [main] DEBUG hello.HelloWorld - ======debug
+00:06:15.499 [main] INFO  hello.HelloWorld - ======info
+00:06:15.500 [main] WARN  hello.HelloWorld - ======warn
+00:06:15.500 [main] ERROR hello.HelloWorld - ======error
+00:06:25.067 [main] DEBUG hello.HelloWorld - ======debug
+00:06:25.070 [main] INFO  hello.HelloWorld - ======info
+00:06:25.070 [main] WARN  hello.HelloWorld - ======warn
+00:06:25.070 [main] ERROR hello.HelloWorld - ======error
+00:07:02.950 [main] DEBUG hello.HelloWorld - ======debug
+00:07:02.953 [main] INFO  hello.HelloWorld - ======info
+00:07:02.954 [main] WARN  hello.HelloWorld - ======warn
+00:07:02.954 [main] ERROR hello.HelloWorld - ======error
+00:12:26.482 [main] DEBUG hello.HelloWorld - ======debug
+00:12:26.485 [main] INFO  hello.HelloWorld - ======info
+00:12:26.486 [main] WARN  hello.HelloWorld - ======warn
+00:12:26.486 [main] ERROR hello.HelloWorld - ======error
+00:17:09.221 [main] INFO  hello.HelloWorld - Hello World
+00:18:06.122 [main] INFO  hello.HelloWorld - Hello World
+00:18:06.125 [main] DEBUG hello.HelloWorld - ======debug
+00:18:06.125 [main] INFO  hello.HelloWorld - ======info
+00:18:06.125 [main] WARN  hello.HelloWorld - ======warn
+00:18:06.125 [main] ERROR hello.HelloWorld - ======error
+00:22:28.137 [main] ERROR hello.HelloWorld - ======error
+00:23:01.173 [main] WARN  hello.HelloWorld - ======warn
+00:23:01.176 [main] ERROR hello.HelloWorld - ======error
+00:23:34.829 [main] INFO  hello.HelloWorld - Hello World
+00:23:34.831 [main] TRACE hello.HelloWorld - ======trace
+00:23:34.831 [main] DEBUG hello.HelloWorld - ======debug
+00:23:34.832 [main] INFO  hello.HelloWorld - ======info
+00:23:34.832 [main] WARN  hello.HelloWorld - ======warn
+00:23:34.832 [main] ERROR hello.HelloWorld - ======error

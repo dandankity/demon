@@ -1,0 +1,5 @@
+327  [main] INFO  hello.HelloWorld - Hello World
+330  [main] DEBUG hello.HelloWorld - ======debug
+330  [main] INFO  hello.HelloWorld - ======info
+330  [main] WARN  hello.HelloWorld - ======warn
+330  [main] ERROR hello.HelloWorld - ======error
