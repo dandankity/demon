@@ -1,5 +1,6 @@
 allprojects {
     apply plugin: 'idea'
+
 }
 
 subprojects {
@@ -10,6 +11,7 @@ subprojects {
     }
 
     dependencies{
+        compile 'org.springframework:spring-context:3.0.5.RELEASE'
         testCompile 'junit:junit:4.11'
 
     }
