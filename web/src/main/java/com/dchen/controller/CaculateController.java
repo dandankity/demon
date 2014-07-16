@@ -21,17 +21,17 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/hello")
 public class CaculateController {
     @Autowired
-    private ApplicationContext applicationContext;
+    private Client caculateBean;
 
-    @RequestMapping(method = RequestMethod.GET)
-
+    @RequestMapping(method = RequestMethod.POST)
     String printWelcome(ModelMap model,HttpServletRequest request) {
 
-
+        String add1 = request.getParameter("add1");
+        String add2 = request.getParameter("add2");
       //  ApplicationContext applicationContext= RequestContextUtils.getWebApplicationContext(request);
-        Client caculator = (Client)applicationContext.getBean("caculateBean");
+       // Client caculator = (Client)applicationContext.getBean("caculateBean");
 
-        String result=caculator.add("1","2");
+        String result=caculateBean.add(add1,add2);
 
         model.addAttribute("message", "Spring 3 MVC Hello World"+result);
         return "hello";
