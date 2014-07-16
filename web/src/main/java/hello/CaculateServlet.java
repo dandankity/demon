@@ -5,6 +5,8 @@ import caculate.Client;
 import caculate.LinkCaculator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +28,11 @@ public class CaculateServlet extends HttpServlet {
         String add1 = req.getParameter("add1");
         String add2 = req.getParameter("add2");
        // Client caculator=(Client)this.getServletContext().getAttribute("caculateBean");
-        ApplicationContext applicationContext=(ApplicationContext)this.getServletContext().getAttribute("appBean");
-        Client caculator=(Client)applicationContext.getBean("caculateBean");
-        //ICaculator caculator=new AddCaculator();
+       // ApplicationContext applicationContext=(ApplicationContext)this.getServletContext().getAttribute("appBean");
+      //  Client caculator=(Client)applicationContext.getBean("caculateBean");
+        ApplicationContext applicationContext= WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+        Client caculator = (Client)applicationContext.getBean("caculateBean");
+
         String result=caculator.add(add1, add2);
         req.setAttribute("result",result);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
