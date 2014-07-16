@@ -1,25 +1,25 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>Caclulator</title>
+    <title>Calculator</title>
 
 </head>
 <body>
     <%
-        String errorStr ="";
-		if( request.getAttribute("errorStr")!=null)
-			errorStr=request.getAttribute("errorStr").toString();
+        String result ="";
+		if( request.getAttribute("result")!=null)
+			result=request.getAttribute("result").toString();
      
 		%>
-<h1>Budget Query</h1>
-<form action="caculate" method="post" name="information" id="information" onsubmit="return checkId()">
-    name
-    <input type="text" name="add1" id="name"></br>
-    id&nbsp&nbsp&nbsp&nbsp&nbsp
-    <input type="text" name="add2" id="id"></br></br>
+<h1>Calculator</h1>
+<form action="calculate" method="post" name="information" id="information">
+    add1
+    <input type="text" name="add1" ></br>
+    add2
+    <input type="text" name="add2" ></br></br>
     &nbsp&nbsp&nbsp&nbsp<input type="button" name="cancel" value="cancel" >&nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="submit" name="submit" value="submit"> </br>
-	<div><%=errorStr%></div>
+	<div><%=result%></div>
 </form>
 </body>
 </html>

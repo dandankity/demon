@@ -29,10 +29,14 @@ public class CaculateServlet extends HttpServlet {
         ApplicationContext applicationContext=(ApplicationContext)this.getServletContext().getAttribute("appBean");
         Client caculator=(Client)applicationContext.getBean("caculateBean");
         //ICaculator caculator=new AddCaculator();
-        PrintWriter pw = resp.getWriter();//得到一个输出流
+        String result=caculator.add(add1, add2);
+        req.setAttribute("result",result);
+        req.getRequestDispatcher("index.jsp").forward(req,resp);
+
+      /*  PrintWriter pw = resp.getWriter();//得到一个输出流
         pw.println("<html><head></head><body>" + caculator.add(add1, add2) + "</body></html>");
         pw.flush();
-        pw.close();
+        pw.close(); */
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
