@@ -11,9 +11,7 @@ subprojects {
     }
 
     dependencies{
-        compile 'org.springframework:spring-context:3.0.5.RELEASE'
-        compile 'org.springframework:spring-core:4.0.0.RELEASE'
-        compile 'org.springframework:spring-web:4.0.0.RELEASE'
+        compile 'org.springframework:spring-webmvc:4.0.0.RELEASE'
         testCompile 'junit:junit:4.11'
 
     }
