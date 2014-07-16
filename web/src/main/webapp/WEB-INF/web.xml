@@ -23,6 +23,19 @@
         <servlet-name>caculateservlet</servlet-name>
         <url-pattern>/caculate1</url-pattern>
     </servlet-mapping>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/SpringBeans.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>
+            hello.MyListener
+        </listener-class>
+    </listener>
 
 
 

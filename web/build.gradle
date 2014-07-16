@@ -5,5 +5,8 @@ dependencies{
     providedCompile 'javax.servlet:servlet-api:2.5'
 
 }
+jettyRun{
+    httpPort=8090
+}
 
 

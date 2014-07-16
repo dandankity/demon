@@ -30,23 +30,14 @@ public class HelloWorldServlet extends HttpServlet {
         Client caculator=(Client) context.getBean("caculateBean");
         //ICaculator caculator=new AddCaculator();
         PrintWriter pw  = resp.getWriter();//得到一个输出流
-        pw.println("<html><head></head><body>"+ caculator.add("12","23") +"~</body></html>");
+        pw.println("<html><head></head><body>"+this.getServletContext() +caculator.add("12","23") +"~</body></html>");
         pw.flush();
         pw.close();
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String add1=req.getParameter("add1");
-        String add2=req.getParameter("add2");
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                "SpringBeans.xml");
-        Client caculator=(Client) context.getBean("caculateBean");
-        //ICaculator caculator=new AddCaculator();
-        PrintWriter pw  = resp.getWriter();//得到一个输出流
-        pw.println("<html><head></head><body>"+ caculator.add("12","23") +"~</body></html>");
-        pw.flush();
-        pw.close();
+        doGet(req, resp);
     }
 
 }
