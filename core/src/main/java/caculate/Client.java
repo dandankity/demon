@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Client {
 
 
-    public ICaculator caculator;
+    private ICaculator caculator;
     @Autowired
     public void setCaculator(ICaculator caculator) {
         this.caculator = caculator;
