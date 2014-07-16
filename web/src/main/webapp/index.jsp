@@ -12,7 +12,7 @@
      
 		%>
 <h1>Calculator</h1>
-<form action="hello" method="post" name="information" id="information">
+<form action="calculate" method="post" name="information" id="information">
     add1
     <input type="text" name="add1" ></br>
     add2
