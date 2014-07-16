@@ -30,7 +30,7 @@ public class CaculateServlet extends HttpServlet {
         Client caculator=(Client)applicationContext.getBean("caculateBean");
         //ICaculator caculator=new AddCaculator();
         PrintWriter pw = resp.getWriter();//得到一个输出流
-        pw.println("<html><head></head><body>" + caculator.add("12", "23") + "~</body></html>");
+        pw.println("<html><head></head><body>" + caculator.add(add1, add2) + "</body></html>");
         pw.flush();
         pw.close();
     }
