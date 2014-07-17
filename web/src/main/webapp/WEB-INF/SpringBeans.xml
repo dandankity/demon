@@ -14,5 +14,9 @@
     <bean id="caculator" class="caculate.LinkCaculator" />
   <!--  <bean id="AddCaculator" class="caculate.AddCaculator" /> -->
 
+    <bean id="employeeDao" class="com.dchen.dao.impl.EmployeeDaoImpl">
+    </bean>
+    <bean id="budgetDao" class="com.dchen.dao.impl.BudgetDaoImpl" />
+
 
 </beans>
