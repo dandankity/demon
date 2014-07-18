@@ -10,13 +10,17 @@ import java.util.List;
 public interface EmployeeDao {
     public List getEmployeeList();
 
-    public void addUser(Employee u);
+    public void addEmployee(Employee u);
 
     public void deleteEmployee(int id);
 
     public Employee searchById(String  id);
 
+    public Employee queryById(String id);
+
     public void updateEmployee(Employee u);
+
+    public int countEmployee();
 
    // public int getUserCount();
 }

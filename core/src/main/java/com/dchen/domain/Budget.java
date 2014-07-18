@@ -7,49 +7,70 @@ import java.util.Date;
  */
 public class Budget {
 
-    private String ExpenseID;
-    private String EmployeeID;
-    private String Name;
-    private Date   ExpenseDate;
-    private int    cost;
+    private String expenseID;
+    private String employeeID;
+    private String employeeName;
+    private Date expenseDate;
+    private double cost;
+    private String expenseType;
+    private String description;
 
     public String getExpenseID() {
-        return ExpenseID;
+        return expenseID;
     }
 
     public void setExpenseID(String expenseID) {
-        ExpenseID = expenseID;
+        this.expenseID = expenseID;
     }
 
     public String getEmployeeID() {
-        return EmployeeID;
+        return employeeID;
     }
 
     public void setEmployeeID(String employeeID) {
-        EmployeeID = employeeID;
+        this.employeeID = employeeID;
     }
 
-    public String getName() {
-        return Name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
     public Date getExpenseDate() {
-        return ExpenseDate;
+        return expenseDate;
     }
 
     public void setExpenseDate(Date expenseDate) {
-        ExpenseDate = expenseDate;
+        this.expenseDate = expenseDate;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
+
+    public String getExpenseType() {
+        return expenseType;
+    }
+
+    public void setExpenseType(String expenseType) {
+        this.expenseType = expenseType;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
 }
+

@@ -7,7 +7,7 @@ import java.util.List;
  * Created by dchen on 7/17/14.
  */
 public interface BudgetDao {
-    public List getBudgetList(String expenseId);
+    public List getBudgetList(String expenseId,String expenseType);
 
     public void addBudget(Budget u);
 
@@ -15,5 +15,7 @@ public interface BudgetDao {
 
     public Budget searchById(int id);
 
-    public void updateEmployee(Budget u);
+    public void updateBudget(Budget u);
+
+    public List getBudgetListByType(String expenseId,String expenseType);
 }
