@@ -58,8 +58,8 @@ public class BudgetDaoImplTest {
     public void testGetBudgetListByType() throws Exception {
        // JdbcTemplate template=new JdbcTemplate(dataSource);
 
-        List<Budget> budgetList = budgetDao.getBudgetList("00001", "'Books','Training/Education'");
-        System.out.print(budgetList.get(0).getEmployeeName()+"test");
+        List<Budget> budgetList = budgetDao.getBudgetListByType("00001", "'Books','Training/Education'");
+        System.out.print(budgetList.size()+"test");
 
     }
 }
