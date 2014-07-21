@@ -52,7 +52,7 @@ public class BudgetController {
                 int totalMonth = 13 - month + (int) exp * 12;
                 if (totalMonth < 12) {
                     budget = budget * totalMonth / 12;
-
+                    budget = Double.parseDouble(String.format("%.1f", budget));
                 }
 
             }
@@ -65,6 +65,7 @@ public class BudgetController {
                 }
             }
             double balance = budget - costSum;
+            balance= Double.parseDouble(String.format("%.1f", balance));
             if (balance <= 0) { //
                 balance = 0;
             }
