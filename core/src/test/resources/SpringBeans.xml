@@ -23,7 +23,7 @@
     </bean>
     <bean id="employeeDao" class="com.dchen.dao.impl.EmployeeDaoImpl">
     </bean>
-    <bean id="budgetDao" class="com.dchen.dao.impl.ExpenseDaoImpl"/>
+    <bean id="expenseDao" class="com.dchen.dao.impl.ExpenseDaoImpl"/>
 
 
     <bean id="caculateBean" class="caculate.Client">
