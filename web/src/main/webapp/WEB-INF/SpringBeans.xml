@@ -37,7 +37,7 @@
 
     <bean id="employeeDao" class="com.dchen.dao.impl.EmployeeDaoImpl">
     </bean>
-    <bean id="budgetDao" class="com.dchen.dao.impl.BudgetDaoImpl" />
+    <bean id="budgetDao" class="com.dchen.dao.impl.ExpenseDaoImpl" />
 
 
 </beans>

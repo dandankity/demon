@@ -1,9 +1,9 @@
 package com.dchen.controller;
 
 
-import com.dchen.dao.BudgetDao;
+import com.dchen.dao.ExpenseDao;
 import com.dchen.dao.EmployeeDao;
-import com.dchen.domain.Budget;
+import com.dchen.domain.Expense;
 import com.dchen.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class BudgetController {
     @Autowired
     private EmployeeDao employeeDao;
     @Autowired
-    private BudgetDao budgetDao;
+    private ExpenseDao expenseDao;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String indexDisplay() {
@@ -40,7 +39,7 @@ public class BudgetController {
 
 
         Employee employee = employeeDao.queryById(sid);
-        if (employee != null) {
+        if (employee!= null) {
             double budget = 2000;   //  Initial budget 2000
             int costSum = 0;
             int loan = 0;   //loan money
@@ -57,10 +56,10 @@ public class BudgetController {
                 }
 
             }
-            List<Budget> budgetList = budgetDao.getBudgetListByType(sid, "'Books','Training/Education'");
+            List<Expense> expenseList = expenseDao.getBudgetListByType(sid, "'Books','Training/Education'");
 
-            if (budgetList != null) {
-                for (Budget expense : budgetList) {
+            if (expenseList != null) {
+                for (Expense expense : expenseList) {
                     costSum += expense.getCost();
                     // query += result.getInt("cost") + " ";
                 }

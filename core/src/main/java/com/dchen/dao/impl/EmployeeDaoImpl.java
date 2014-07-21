@@ -3,6 +3,7 @@ package com.dchen.dao.impl;
 import com.dchen.dao.EmployeeDao;
 import com.dchen.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
@@ -58,6 +59,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public void deleteEmployee(int id) {
 
     }
+
     @Deprecated
     @Override
     public Employee searchById(String id) {
@@ -85,9 +87,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee queryById(String id) {
-        return (Employee) jdbcTemplate.queryForObject("SELECT * from employee where EmployeeID=" + id, new ParameterizedRowMapper<Employee>() {
-            public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
-
+       /* return (Employee) jdbcTemplate.queryForObject("SELECT * from employee where EmployeeID=" + id,
+                new ParameterizedRowMapper<Employee>(){ public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Employee employee = new Employee();
                 employee.setEmployeeID(rs.getString("EmployeeID"));
                 employee.setEmployeeName(rs.getString("Name"));
@@ -95,7 +96,27 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 return employee;
 
             }
-        });
+        }); */
+        try {
+
+            return jdbcTemplate.queryForObject(
+                    "select * from employee where EmployeeID=?",
+                    new ParameterizedRowMapper<Employee>() {
+                        public Employee mapRow(ResultSet rs, int rowNum)
+                                throws SQLException {
+                            Employee employee = new Employee();
+                            employee.setEmployeeID(rs.getString("EmployeeID"));
+                            employee.setEmployeeName(rs.getString("Name"));
+                            employee.setTwExp(rs.getDouble("Exp"));
+                            return employee;
+                        }
+                    },
+                    id
+            );
+
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override
