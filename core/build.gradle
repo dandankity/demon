@@ -72,6 +72,14 @@ integTest.dependsOn initMyDb
 
 build.dependsOn integTest
 
+
+checkstyle {
+    configFile = file('config/checkstyle/checkstyle-main.xml')
+//    filter {
+//        exclude 'checkSstyleIntegTest'
+//    }
+}
+
 afterEvaluate {
     idea.module {
         testSourceDirs += sourceSets.integTest.allSource.srcDirs.flatten() as LinkedHashSet
