@@ -1,5 +1,0 @@
-184  [main] INFO  hello.HelloWorld - Hello World
-186  [main] DEBUG hello.HelloWorld - ======debug
-186  [main] INFO  hello.HelloWorld - ======info
-186  [main] WARN  hello.HelloWorld - ======warn
-186  [main] ERROR hello.HelloWorld - ======error

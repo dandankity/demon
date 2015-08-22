@@ -2,9 +2,6 @@ package com.dchen.domain;
 
 import java.util.Date;
 
-/**
- * Created by dchen on 7/17/14.
- */
 public class Expense {
 
     private String expenseID;
@@ -14,6 +11,16 @@ public class Expense {
     private double cost;
     private String expenseType;
     private String description;
+
+    public Expense(String expenseID, String employeeID, String employeeName) {
+        this.expenseID = expenseID;
+        this.employeeID = employeeID;
+        this.employeeName = employeeName;
+    }
+
+    public Expense(){
+
+    }
 
     public String getExpenseID() {
         return expenseID;

@@ -1,8 +1,80 @@
+apply plugin: 'database'
+sourceSets {
+    integTest {
+        java.srcDir file('src/test-integration/java')
+        resources.srcDir file('src/test-integration/resources')
+    }
+}
+
+import au.com.coherentsoftware.gradle.database.task.*
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath('au.com.coherentsoftware.gradle:Gradle-DatabasePlugin:1.0.12')
+    }
+}
+
+database {
+    username = 'root'
+    password = ''
+    driver = 'com.mysql.jdbc.Driver'  // the default value
+    host = 'localhost'  // the default value
+    port = '3306' // the default value
+}
+configurations {
+    driver
+}
+
+dependencies {
+    driver 'mysql:mysql-connector-java:5.1.31'
+}
+
+URLClassLoader loader = GroovyObject.class.classLoader as URLClassLoader
+configurations.driver.each { File file ->
+    loader.addURL(file.toURI().toURL())
+}
+Class driver = loader.loadClass(project.database.driver)
+
+task cleanMyDb(type: DbReset) {
+    database 'TrainingBudgetData'
+}
+
+task initMyDb(type: DbInit) {
+    database  'TrainingBudgetData'
+    dataFile = 'config/scripts/initDB.sql'
+}
+task integTest(type: Test) {
+    testClassesDir = sourceSets.integTest.output.classesDir
+    classpath = sourceSets.integTest.runtimeClasspath
+}
+
 dependencies{
+
     compile "mysql:mysql-connector-java:5.1.25"
     compile "hsqldb:hsqldb:1.8.0.7"
+
+    testCompile 'org.mockito:mockito-all:1.9.5'
     testCompile 'org.springframework:spring-test:4.0.0.RELEASE'
 
-
+    integTestCompile sourceSets.main.output
+    integTestCompile configurations.testCompile
+    integTestCompile sourceSets.test.output
+    integTestRuntime configurations.testRuntime
 
 }
+
+initMyDb.dependsOn cleanMyDb
+integTest.dependsOn initMyDb
+
+build.dependsOn integTest
+
+afterEvaluate {
+    idea.module {
+        testSourceDirs += sourceSets.integTest.allSource.srcDirs.flatten() as LinkedHashSet
+    }
+}
+

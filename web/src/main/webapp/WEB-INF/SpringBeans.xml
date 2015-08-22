@@ -10,10 +10,6 @@
 
 
 
-    <bean id="caculateBean" class="caculate.Client">
-    </bean>
-    <bean id="caculator" class="caculate.LinkCaculator" />
-  <!--  <bean id="AddCaculator" class="caculate.AddCaculator" /> -->
     <bean id="dataSource"
           class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName">

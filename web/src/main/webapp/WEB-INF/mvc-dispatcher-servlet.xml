@@ -19,10 +19,6 @@
             <value>.jsp</value>
         </property>
     </bean>
-    <!--<bean id="caculateBean" class="caculate.Client">
-    </bean>
-    <bean id="caculator" class="caculate.LinkCaculator" />
-   <bean id="AddCaculator" class="caculate.AddCaculator" /> -->
 
 
 </beans>

@@ -1,8 +1,5 @@
 package com.dchen.domain;
 
-/**
- * Created by dchen on 7/17/14.
- */
 public class Employee {
 
     private String employeeID;

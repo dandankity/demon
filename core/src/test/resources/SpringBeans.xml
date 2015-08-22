@@ -10,8 +10,6 @@
     <context:annotation-config/>
 
 
-
-
     <jdbc:embedded-database id="dataSource">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
@@ -24,13 +22,5 @@
     <bean id="employeeDao" class="com.dchen.dao.impl.EmployeeDaoImpl">
     </bean>
     <bean id="expenseDao" class="com.dchen.dao.impl.ExpenseDaoImpl"/>
-
-
-    <bean id="caculateBean" class="caculate.Client">
-    </bean>
-    <bean id="caculator" class="caculate.LinkCaculator"/>
-    <!--  <bean id="AddCaculator" class="caculate.AddCaculator" /> -->
-   <!-- <context:component-scan base-package="com.test.java"></context:component-scan> -->
-
 
 </beans>

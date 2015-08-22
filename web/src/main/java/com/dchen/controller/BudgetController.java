@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * Created by dchen on 7/17/14.
- */
+
 @Controller
 public class BudgetController {
     @Autowired
@@ -33,10 +31,7 @@ public class BudgetController {
     @RequestMapping(value = "/budget", method = RequestMethod.POST)
     String calculateBudget(ModelMap model, HttpServletRequest request) {
 
-        //String name = request.getParameter("name"); //获得用户姓名
         String sid = request.getParameter("id");   //获得用户ID
-        // int id=1;
-
 
         Employee employee = employeeDao.queryById(sid);
         if (employee!= null) {
@@ -61,7 +56,6 @@ public class BudgetController {
             if (expenseList != null) {
                 for (Expense expense : expenseList) {
                     costSum += expense.getCost();
-                    // query += result.getInt("cost") + " ";
                 }
             }
             double balance = budget - costSum;

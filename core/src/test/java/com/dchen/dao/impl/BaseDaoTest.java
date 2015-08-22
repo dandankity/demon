@@ -1,37 +1,25 @@
-package test.java;
-
-import com.dchen.dao.impl.BaseDao;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+package com.dchen.dao.impl;
 
 public class BaseDaoTest {
-    /*
+/*
     private EmbeddedDatabase db;
     @Before
     public void setUp() {
-        // creates a HSQL in-memory db populated from classpath:schema.sql and classpath:test-data.sql
+        //creates a HSQL in-memory db populated from classpath:initDB.sql and classpath:test-data.sql
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-         db = builder.addScript("schema.sql").addScript("test-data.sql").build();
-        // do stuff against the db (EmbeddedDatabase extends javax.sql.DataSource)
+         db = builder.addScript("initDB.sql").addScript("test-data.sql").build();
+        //do stuff against the db (EmbeddedDatabase extends javax.sql.DataSource)
     }
     @Test
     public void should_connect_database() throws SQLException {
-       // Connection con = BaseDao.getConnection();
+       Connection con = BaseDao.getConnection();
 
 
     }
 
     @Test
     public void should_query_all_database() throws SQLException {
-      /*  Connection con = BaseDao.getConnection();
+       Connection con = BaseDao.getConnection();
         Statement statement = BaseDao.getStatement(con);
         String sql = "select * from employee where EmployeeID='00009';";
         ResultSet result = BaseDao.getRs(statement, sql);
@@ -57,6 +45,7 @@ public class BaseDaoTest {
         db.shutdown();
     }
     */
+
    
 
 }

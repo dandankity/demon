@@ -5,9 +5,6 @@ package com.dchen.dao.impl;
 import java.sql.*;
 
 
-/**
- * Created by dchen on 7/17/14.
- */
 public class BaseDao {
     private final static String DB_DRIVER = "com.mysql.jdbc.Driver";
 
