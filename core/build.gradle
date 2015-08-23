@@ -75,9 +75,7 @@ build.dependsOn integTest
 
 checkstyle {
     configFile = file('config/checkstyle/checkstyle-main.xml')
-//    filter {
-//        exclude 'checkSstyleIntegTest'
-//    }
+    sourceSets = [sourceSets.main]
 }
 
 afterEvaluate {

@@ -9,4 +9,8 @@ jettyRun{
     httpPort=8090
 }
 
+checkstyle {
+    sourceSets = [sourceSets.main]
+}
+
 
