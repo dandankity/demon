@@ -1,4 +1,5 @@
 apply plugin: 'database'
+
 sourceSets {
     integTest {
         java.srcDir file('src/test-integration/java')
@@ -83,4 +84,3 @@ afterEvaluate {
         testSourceDirs += sourceSets.integTest.allSource.srcDirs.flatten() as LinkedHashSet
     }
 }
-
