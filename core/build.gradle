@@ -71,7 +71,7 @@ dependencies{
 initMyDb.dependsOn cleanMyDb
 integTest.dependsOn initMyDb
 
-build.dependsOn integTest
+//build.dependsOn integTest
 
 
 checkstyle {
